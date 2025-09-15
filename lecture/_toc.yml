@@ -17,7 +17,7 @@ parts:
       - file: introduction/cogneuro_lang
       - file: introduction/open_science
       - file: introduction/ai
-      - file: introduction/reading
+      - file: introduction/literature
       - file: introduction/writing
       - file: introduction/communication
 
