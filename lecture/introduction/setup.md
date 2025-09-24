@@ -17,7 +17,7 @@ If you foresee any of these being a problem please reach out to one of the instr
 
 We ask that you install the following software before arriving to the second session:
 
-- [R](https://www.r-project.org/) (version `4.4.1`) and [RStudio](https://posit.co/download/rstudio-desktop/)
+- [R](https://www.r-project.org/) (version `4.5.1`) and [RStudio](https://posit.co/download/rstudio-desktop/)
 
 - [`Psychopy`](https://www.psychopy.org/) (Standalone installation) for running the demo experiment and your projects
 
