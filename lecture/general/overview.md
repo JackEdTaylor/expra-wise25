@@ -2,7 +2,7 @@
 
 In this ExPra (Empirisch-Experimentelles Praktikum), you will get hands-on experience in Psychological research. We will progress through the stages of a research project, from theoretical background and methodological understanding, to experiment design, data collection, analysis, and presentation of results in a poster, presentation, and report.
 
-[<h4><i class="fa-solid fa-file-pdf"></i> Download the ExPra Guide for Students</h4>](https://raw.githubusercontent.com/JackEdTaylor/expra-wise25/master/lecture/static/EXPRA_Guide_for_students.pdf)
+[<h4><i class="fa-solid fa-file-pdf"></i> Download the ExPra Guide for Students (currently last year's)</h4>](https://raw.githubusercontent.com/JackEdTaylor/expra-wise25/master/lecture/static/EXPRA_Guide_for_students.pdf)
 
 ## How to reach the folks in the front
 
@@ -25,9 +25,9 @@ Caroline Bergmann
 
 ### When and where do we meet?
 
-The course will be held at 08:00 - 12:00 on Thursdays, in Seminarpavillon Westend - SP 1.04. If it's useful, you can [download this `.ics` file](https://qis.server.uni-frankfurt.de/qisserver/rds?state=verpublish&status=transform&vmfile=no&veranstaltung.veranstid=381510&veransttermin.parallelid=5&moduleCall=iCalendarGruppe&publishConfFile=reports&publishSubDir=veranstaltung) for your calendar app.
+The course will be held at 14:00 - 18:00 on Mondays, in PEG-Gebäude Westend - PEG 5.G 170. If it's useful, you can [download this `.ics` file](https://qis.server.uni-frankfurt.de/qisserver/rds?state=verpublish&status=transform&vmfile=no&publishid=961537&moduleCall=iCalendar&publishConfFile=reports&publishSubDir=veranstaltung) for your calendar app.
 
-<iframe width="425" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=8.669369%2C50.130935%2C8.669369%2C50.130935&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/export#map=19/50.130935/8.669369">View Larger Map</a></small>
+<iframe width="425" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=8.666592836380007%2C50.1273775572876%2C8.671072125434877%2C50.12911423952464&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/?#map=19/50.128246/8.668832">View Larger Map</a></small>
 
 
 ### Course Software
