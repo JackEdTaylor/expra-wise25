@@ -56,15 +56,17 @@ We are responsible for ensuring that participants' data is protected, in accorda
 -	Any personal data, including video or audio or handwritten material, needs to be especially protected. It needs to be registered and monitored by the [Datenschutzbeauftragte of Goethe University](https://www.uni-frankfurt.de/111064324/Datenschutz). You also need a statement from the ethics committee (visit the [institute’s website](https://www.uni-frankfurt.de/141179107/Die_Gremien_des_Fachbereich_05) for more information on the local ethics committee). 
 -	Personal data include names, addresses, email addresses, matrikel numbers; any information that might possibly enable someone to identify the person.
 
-Consider how your data could be used to identify outliers, embarrassments; used for blackmailing. In short, consider how the data you collect might possibly be of use to a criminal or bully.
+✓	Participants are considered the owners of any data they provide.
 
-✓	Offer **deletion of individual data** whenever possible.
+- If participants request it, they can **access their own data**.
+- Participants can also request **deletion of their own data**.
+- If sharing data online (e.g., on LIFOS), you should mention any deadline for requesting data deletion.
 
-## How can I check my ethics?
-https://www.uni-frankfurt.de/141179107/Die_Gremien_des_Fachbereich_05
--	Hinweise für Antragsteller
--	Checkliste Kurzantrag (Suggestion: Fill out and Peer-review the checklist between Expra-groups!)
+## The Ethics Committee of Goethe University Frankfurt's Psychology Department
 
+You can find more information about the process required for ethical approval here: https://www.uni-frankfurt.de/141179107/Die_Gremien_des_Fachbereich_05
+
+Note: For your ExPra studies, we have requested ethical approval for the studies on your behalf. You can ask your project's supervisor for more details.
 
 ----
 
