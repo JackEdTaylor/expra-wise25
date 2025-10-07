@@ -14,6 +14,7 @@ parts:
       - file: introduction/intro
       - file: introduction/setup
       - file: introduction/empirical_research
+      - file: introduction/ethics
       - file: introduction/cogneuro_lang
       - file: introduction/open_science
       - file: introduction/ai
