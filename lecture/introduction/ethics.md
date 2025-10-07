@@ -13,7 +13,7 @@ p + ol {
 }
 </style>
 
-# Ethical Standards and Data Privacy
+# Ethics and Data Privacy
 
 ## Why is ethics important? 
 It is your study. It is your responsibility. 
