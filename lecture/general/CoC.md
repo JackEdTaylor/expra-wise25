@@ -7,7 +7,7 @@ this course is dedicated to providing an environment where people are kind and r
 This could really be the end of that code of conduct, but some forms of harassment and negative behavior are fairly hard to identify at first. Please read carefully through the rest of the document to make sure you avoid them. There is also a section to know what to do and expect if you experience behavior that deviates from this code of conduct.
 
 Harassment includes, but _is not limited to_:  
-⛔ Verbal comments that reinforce social structures of domination related to gender, gender identity and expression, sexual orientation, disability, physical appearance, body size, race, age or religion.  
+⛔ Verbal comments that reinforce social structures of domination related to gender, gender identity and expression, sexual orientation, disability, physical appearance, body size, race, age or religion
 ⛔ Sexual images in public spaces  
 ⛔ Deliberate intimidation, stalking, or following  
 ⛔ Harassing photography or recording  
@@ -40,7 +40,7 @@ While we do not assume participants know the cultural practices of every ethnic 
 
 
 ## **Enforcement**
-Participants asked to stop any harassing behavior are expected to comply immediately. Organizers and presenters are also subject to the anti-harassment policy. In particular, they should not use sexualized images, activities, or other material. Event organisers may take action to redress anything designed to, or with the clear impact of, disrupting the event or making the environment hostile for any participants.
+Participants asked to stop any harassing behavior are expected to comply immediately. Organizers and presenters are also subject to the anti-harassment policy. In particular, they should not use sexualized images, activities, or other material.
 
 ## **Reporting**
 If someone makes you or anyone else feel unsafe or unwelcome, please report it as soon as possible to the organizers either in person or by email.
@@ -70,4 +70,4 @@ Also, if you need moral support, feel welcome to ping the organizers in person o
 
 
 ## Attribution
-Thanks and credits go the [Montreal Brainhack School]() for providing the CoC, this CoC is based on.
+Thanks and credits go the [Montreal Brainhack School](https://school-brainhack.github.io/coc/) for providing the CoC that this CoC is based on.
