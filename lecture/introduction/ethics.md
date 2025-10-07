@@ -72,4 +72,3 @@ Note: For your ExPra studies, we have requested ethical approval for the studies
 
 **Acknowledgments**  
 This section was adapted from content contributed by [Sabine Windmann](https://www.psychologie.uni-frankfurt.de/55263733/Prof__Dr__Sabine_Windmann). 
-

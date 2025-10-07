@@ -54,5 +54,6 @@ parts:
   - caption: Miscellaneous
     chapters:
     - file: general/assignments
+    - file: general/student-guide
     - file: general/gen_ai
     - file: general/CoC
