@@ -64,5 +64,29 @@
                 "feedback": "this describes deduction"
             }
         ]
+    },
+    {
+        "question": "Which of the following are operationalised variables?",
+        "type": "many_choice",
+        "answers": [
+            {
+                "answer": "Autism-Spectrum Quotient",
+                "correct": true
+            },
+            {
+                "answer": "Depression",
+                "correct": false,
+                "feedback": "For this to be operationalised, we would need to know exactly how Depression is measured"
+            },
+            {
+                "answer": "Word-Reading Difficulty",
+                "correct": false,
+                "feedback": "For this to be operationalised, we would need to know exactly how word-reading difficulty is measured: e.g., response time in lexical decision?"
+            },
+            {
+                "answer": "Age in years",
+                "correct": true
+            }
+        ]
     }
 ]
