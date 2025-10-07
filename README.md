@@ -1,4 +1,4 @@
-<img src="lecture/static/logo.png" width="250">
+<img src="lecture/_static/logo.png" width="250">
 
 This is the GitHub repository for the Neurokognitive Psychologie Empirisch-Experimentelles Praktikum course 2025-26, taught at Goethe University Frankfurt as part of PsyBSc 10.
 

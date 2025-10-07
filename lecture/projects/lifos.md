@@ -55,7 +55,7 @@ To access the platform, simply go to [https://lifos.uni-frankfurt.de](https://li
 
 Once you are logged in, your landing page should look something like this:
 
-<img src ="../static/landingpage.png" alt = "Screenshot of a LIFOS welcome page with the message 'Welcome to GitLab, Susan!' and options to explore public projects or learn more about GitLab. The left sidebar shows navigation items such as Projects, Groups, Issues, and Merge requests."><br>
+<img src ="../_static/landingpage.png" alt = "Screenshot of a LIFOS welcome page with the message 'Welcome to GitLab, Susan!' and options to explore public projects or learn more about GitLab. The left sidebar shows navigation items such as Projects, Groups, Issues, and Merge requests."><br>
 
 Whenever you want to navigate back to this landing page, simply click on the LIFOS logo in the upper left corner. 
 
@@ -69,7 +69,7 @@ First, let's take a look at groups. Groups are the central organizational units 
 
 If you click on "Groups" in the left sidebar, you will see all groups of which you are already a member. To join new groups, you then need to click on "Explore Groups" in the upper right corner.
 
-<img src ="../static/explore-groups.png" alt = "Screenshot of the LIFOS Groups page with one listed group. The 'Explore groups' link is highlighted in the top right corner."><br>
+<img src ="../_static/explore-groups.png" alt = "Screenshot of the LIFOS Groups page with one listed group. The 'Explore groups' link is highlighted in the top right corner."><br>
 
 If this is your first time on LIFOS, no groups will be displayed here yet. 
 
@@ -79,7 +79,7 @@ If your lecturer previously invited you to the correct EXPRA group, you can skip
 
 Now, find your EXPRA group for the current semester (*WiSe 2025-26*) by following these steps:
 
-1. Click on *Explore Groups* to view all available groups. This should look like this: <br><br><img src ="../static/choose-group.png" alt = "Screenshot of the Explore Groups page showing multiple groups such as Pädagogische Psychologie, Sozialpsychologie, and Klinische Psychologie. The Sozialpsychologie group is highlighted.">
+1. Click on *Explore Groups* to view all available groups. This should look like this: <br><br><img src ="../_static/choose-group.png" alt = "Screenshot of the Explore Groups page showing multiple groups such as Pädagogische Psychologie, Sozialpsychologie, and Klinische Psychologie. The Sozialpsychologie group is highlighted.">
 
 2. Select your department, e.g., if you take part in the Social Psychology EXPRA (*Sozialpsychologie*), click on this group.
 3. Select the module *PsyBsc10 Empirisch-experimentelles Praktikum (Expra)*. 
@@ -93,7 +93,7 @@ As you have learned by now, anyone can view things on LIFOS, but not everybody c
 
 Therefore, navigate to the upper right corner of the group, click on "..." and then on ***Request access***. 
 
-<img src ="../static/request-access.png" alt = "Screenshot of the LIFOS group options menu. The cursor points to 'Request Access' below 'Copy group ID'." width = "250px">
+<img src ="../_static/request-access.png" alt = "Screenshot of the LIFOS group options menu. The cursor points to 'Request Access' below 'Copy group ID'." width = "250px">
 
 Then your lecturer has to grant you access to the group. This may take a few minutes if you do it in class. Once this is done, just refresh the window. Now you possess the necessary permissions to proceed with the next step: creating the project!
 
@@ -108,7 +108,7 @@ To create a project from the EXPRA template, follow these steps:
 
 1. Click on *Create new project*
 2. Select the panel *Create from Template* (Important: NOT "Create blank project"!).
-3. Select the tab *Instance*: <br><img src ="../static/instance.png" alt = "Screenshot of the LIFOS 'Create from template' page. A warning box explains that students must use the correct instance template, with options below to select templates such as Behavioral Experiments – BSc or MSc. The 'Instance' tab is highlighted." width = "550px"><br>
+3. Select the tab *Instance*: <br><img src ="../_static/instance.png" alt = "Screenshot of the LIFOS 'Create from template' page. A warning box explains that students must use the correct instance template, with options below to select templates such as Behavioral Experiments – BSc or MSc. The 'Instance' tab is highlighted." width = "550px"><br>
 
 4. Scroll down to find the ***PsyBSc10 ExPra Template***.
 5. Click on *Use template*.
@@ -125,7 +125,7 @@ Once you've chosen a title and project description, you unfortunately won't be a
 
 An example of the project properties for a project named "The correlation between chocolate cravings and Big 5 Personality" can look like this:
 
-<img src ="../static/project-details.png" alt = "Screenshot of the 'Create from template' form. Fields are filled with example project details such as the title 'The correlation between chocolate cravings and Big 5' a project slug 'chocolate-big5,' and a description listing student names, with 'Internal' visibility selected."><br>
+<img src ="../_static/project-details.png" alt = "Screenshot of the 'Create from template' form. Fields are filled with example project details such as the title 'The correlation between chocolate cravings and Big 5' a project slug 'chocolate-big5,' and a description listing student names, with 'Internal' visibility selected."><br>
  
 Please make sure not to change the visibility level (keep it *Internal*)!
 
@@ -172,7 +172,7 @@ In the same vein, you can also navigate to the folder *Preregistration* and the 
 
 Later on, when you want to upload materials, anonymized data or your code into your project, you can do this by navigating inside the respective folder, clicking on the plus sign in the upper part of the window, and selecting *Upload file*. 
 
-<img src ="../static/upload-file.png" alt = "Screenshot of a LIFOS project folder with the '+' menu open. The cursor highlights the 'Upload file' option under 'This directory'." width = "500px" ><br>
+<img src ="../_static/upload-file.png" alt = "Screenshot of a LIFOS project folder with the '+' menu open. The cursor highlights the 'Upload file' option under 'This directory'." width = "500px" ><br>
 
 A window will then appear in which you will be able to select the file. Finally, modify the *Commit message* if needed and upload the file by clicking on *Commit*. Et voilà!
 
