@@ -22,7 +22,7 @@ Here is where we will keep track of our schedule. Depending on our progress, pot
 | 24/11/2025 |  - Preregistration Submission<br> - Uploading Stimuli and Code<br> - [Literature Presentation](https://jackedtaylor.github.io/expra-wise25/general/reading.html) <br>  | - Submit Preregistrations |
 | 01/12/2025 |  - Experiment Testing<br> - [Introduction to EEG & MEG](https://jackedtaylor.github.io/expra-wise25/cbi/meeg)<br>  | - Data Collection! |
 | 08/12/2025 |  - [Data Wrangling Workshop Part 1](https://jackedtaylor.github.io/expra-wise25/introduction/data_wrangling_1)<br> - [Introduction to MRI & fMRI](https://jackedtaylor.github.io/expra-wise25/cbi/mri.html)<br> -  [Literature Presentation](https://jackedtaylor.github.io/expra-wise25/general/reading.html)<br>  | - Data Collection! |
-| 15/12/2025 |  - [Data Wrangling Workshop Part 2](https://jackedtaylor.github.io/expra-wise25/introduction/data_wrangling_2)<br> - Implementing your Data Cleaning<br> - [Literature Presentation](https://jackedtaylor.github.io/expra-wise25/general/reading.html) | - Finalise your data cleaning scripts<br>- Draft your Report |
+| 15/12/2025 |  - [Data Wrangling Workshop Part 2](https://jackedtaylor.github.io/expra-wise25/introduction/data_wrangling_2)<br> - Implementing your Data Cleaning<br> - [Literature Presentation](https://jackedtaylor.github.io/expra-wise25/general/reading.html) | - Finish Data Collection!<br>- Finalise your data cleaning scripts<br>- Draft your Report |
 
 ## Part 3: Finalisation
 
