@@ -12,7 +12,7 @@ titlesonly: true
 
 ````{margin}
 ```{warning}
-These pages are still under construction and will be updated continuously.
+These pages will be under continuous construction during the course.
 Please don't be surprised if some content is altered or added!
 ````
 
