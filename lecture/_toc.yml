@@ -44,6 +44,7 @@ parts:
       - file: projects/preregistration
       - file: projects/lifos
       - file: projects/conducting
+      - file: projects/analysis
       - file: projects/presentations
       - file: projects/posters
 
