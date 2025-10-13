@@ -51,9 +51,9 @@ _Please note_: If you already have `R` installed, please check that you have ver
 
 **Psychopy**
 
-1. Go to https://github.com/psychopy/psychopy/releases
+1. Go to https://github.com/psychopy/psychopy/releases/tag/2023.2.3
 
-2. From the latest release (at the top), scroll to assets, and download the StandalonePsychoPy file that ends with `-win64.exe`.
+2. From release 2023.2.3, scroll to assets, and download the StandalonePsychoPy file that ends with `-win64.exe`.
 
 3. Once downloaded, open the installer and allow it to install Psychopy.
 
