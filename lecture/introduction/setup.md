@@ -85,7 +85,7 @@ You will be invited to the course channel via e-mail.
 
 **R and RStudio**
 
-_Please note_: If you already have `R` installed, please check that you have version `4.4.1` and if that's not the case then please install this version.
+_Please note_: If you already have `R` installed, please check that you have version `4.5.1` and if that's not the case then please install this version.
 
 1. Pick a mirror to install R from: https://cran.r-project.org/mirrors.html
 
@@ -99,9 +99,9 @@ _Please note_: If you already have `R` installed, please check that you have ver
 
 **Psychopy**
 
-1. Go to https://github.com/psychopy/psychopy/releases
+1. Go to https://github.com/psychopy/psychopy/releases/tag/2023.2.3
 
-2. Download the tarball for the latest release.
+2. From release 2023.2.3, scroll to assets, and download the tarball for your distribution.
 
 3. Install from the tarball as you usually do for your distribution.
 
@@ -133,7 +133,7 @@ You will be invited to the course channel via e-mail.
 
 **R and RStudio**
 
-_Please note_: If you already have `R` installed, please check that you have version `4.4.1` and if that's not the case then please install this version.
+_Please note_: If you already have `R` installed, please check that you have version `4.5.1` and if that's not the case then please install this version.
 
 1. Pick a mirror to install R from: https://cran.r-project.org/mirrors.html
 
@@ -147,9 +147,9 @@ _Please note_: If you already have `R` installed, please check that you have ver
 
 **Psychopy**
 
-1. Go to https://github.com/psychopy/psychopy/releases
+1. Go to https://github.com/psychopy/psychopy/releases/tag/2023.2.3
 
-2. From the latest release (at the top), scroll to assets, and download the StandalonePsychoPy file that ends with `-macOS.dmg`.
+2. From release 2023.2.3, scroll to assets, and download the StandalonePsychoPy file that ends with `-macOS.dmg`.
 
 3. Once downloaded, open the installer and allow it to install Psychopy.
 
