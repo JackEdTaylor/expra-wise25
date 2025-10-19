@@ -6,9 +6,9 @@ Now that the groups are assigned, here is the project for each group:
 
 **Group ?**: Predictability in Reading
 
-**Group ?**: 
+**Group ?**: Synaesthesic Stroop Task
 
-**Group ?**: 
+**Group ?**: Gender Processing in Language
 
 **Group ?**: Orientation Recall
 
