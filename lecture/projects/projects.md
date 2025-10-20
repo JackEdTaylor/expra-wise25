@@ -8,7 +8,7 @@ Now that the groups are assigned, here is the project for each group:
 
 **Group ?**: Synaesthesic Stroop Task
 
-**Group ?**: Gender Processing in Language
+**Group ?**: Grammar and Social Cognition
 
 **Group ?**: Orientation Recall
 
