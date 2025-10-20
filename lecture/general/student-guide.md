@@ -104,7 +104,7 @@ Each student writes their own EXPRA report on the research topic they worked on 
 submitted as a separate file along with the EXPRA report), and
 - a signed (!) declaration of originality on the last page of the report (see below).
 
-To make grading of the EXPRA reports transparent, you will find the grading criteria [here](grading-criteria).
+To make grading of the EXPRA reports transparent, you will find the [grading criteria here](../_static/EXPRA_Grading_criteria.pdf).
 
 **The deadline for submitting the EXPRA reports is four weeks after the poster session.**
 The exact date will be announced by your supervisor.
@@ -139,7 +139,7 @@ We further highly recommend using a reference management software such as [Zoter
 
 
 ### How do I share study materials via LIFOS?
-As an exercise in open science practices, you are required to share your study materials via [LIFOS](https://lifos.uni-frankfurt.de/users/sign_in) (local infrastructure for open science for psychology students at Goethe University). For more info on LIFOS see [here](https://lifos.uni-frankfurt.de/welcome-to-lifos/LIFOS). Note that sharing materials is part of the grading criteria. The deadline for uploading materials is the same as for submitting the EXPRA reports.
+As an exercise in open science practices, you are required to share your study materials via [LIFOS](https://lifos.uni-frankfurt.de/users/sign_in) (local infrastructure for open science for psychology students at Goethe University). For more info on LIFOS see [here](https://lifos.uni-frankfurt.de/welcome-to-lifos/LIFOS). Note that sharing materials is part of the [grading criteria](../_static/EXPRA_Grading_criteria.pdf). The deadline for uploading materials is the same as for submitting the EXPRA reports.
 
 Specifically, you should upload:
 - Your preregistration (filling out the template provided by LIFOS as a group; **mandatory**)
