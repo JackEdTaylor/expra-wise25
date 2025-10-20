@@ -8,7 +8,7 @@ First, as we'll be using psychopy, make sure you have correctly installed the st
 
 ## **Step 2**: Download and Extract the Files
 
-**a**) [Download the Psychopy experiment](demo_experiment.zip) as a `.zip` folder.
+**a**) [Download the Psychopy experiment](demo_experiment.zip) as a `.zip` folder. If you have a keyboard with no Alt keys, you can download this version of the experiment instead: [Experiment with No Alt Keys](demo_experiment_no_alt_keys.zip)
 
 **b**) Extract the files from the `.zip` folder, and put them in a relevant folder for the ExPra.
 
