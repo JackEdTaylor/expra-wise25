@@ -4,15 +4,15 @@ There are 5 groups in this ExPra, and each group has a different topic.
 
 Now that the groups are assigned, here is the project for each group:
 
-**Group ?**: Predictability in Reading
+**Group A**: Predictability in Reading
 
-**Group ?**: Synaesthesic Stroop Task
+**Group B**: Synaesthesic Stroop Task
 
-**Group ?**: Grammar and Social Cognition
+**Group C**: Grammar and Social Cognition
 
-**Group ?**: Orientation Recall
+**Group D**: Orientation Recall
 
-**Group ?**: Concreteness Ratings
+**Group E**: Concreteness Ratings
 
 ## Slides
 
