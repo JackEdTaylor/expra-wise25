@@ -8,7 +8,7 @@ Each group is required to present one ~30 minute presentation on a paper that is
 
 | Date of Presentation (dd/mm/yyyy) | Group | Title | Authors | Year of Publication | Link |
 |-----------------------------------| ----- |-------| ------- | ------------------- | ---- |
-| 17/11/2025 | A | Title. | Author et al. | year | [*journal*, *issue*, pages](https://doi.org/) |
+| 17/11/2025 | A | Shared computational principles for language processing in humans and deep language models. | Goldstein et al. | 2022 | [*Nature Neuroscience*, *25*, 369-380](https://doi.org/) |
 | 24/11/2025 | B | Non-random associations of graphemes to colours in synaesthetic and non-synaesthetic populations. | Simner et al. | 2005 | [*Cognitive Neuropsychology*, *22*(8), 1069-1085](https://doi.org/10.1080/02643290500200122) |
 | 01/12/2025 | C | The scope of grammatical gender in Spanish: Transference to the conceptual level. | Casado et al. | 2021 | [*Acta Psychologia*, *218*, 103361](https://doi.org/10.1016/j.actpsy.2021.103361) |
 | 08/12/2025 | D | Cardinal rules: Visual orientation perception reflects knowledge of environmental statistics. | Girshick et al. | 2011 | [*Nature Neuroscience*, *3*(6), 535-536](https://doi.org/10.1038/nn.2831/) |
