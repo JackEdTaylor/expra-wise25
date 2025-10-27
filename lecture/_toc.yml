@@ -34,7 +34,7 @@ parts:
   - caption: Demo Experiment
     chapters:
       - file: demo/demo_participate
-      #- file: demo/demo_background  # commented out - don't spoil the background until they have taken part
+      - file: demo/demo_background  # commented out - don't spoil the background until they have taken part
       #- file: demo/demo_analyse  # commented out - will rewrite this with their data
       #- file: demo/demo_feedback  # commented out - will rewrite this with their feedback
 
