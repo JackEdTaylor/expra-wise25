@@ -1,0 +1,67 @@
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.9.24/x64/lib/python3.9/site-packages/jupyter_core/utils/__init__.py", line 154, in wrapped
+    asyncio.get_running_loop()
+RuntimeError: no running event loop
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.9.24/x64/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/opt/hostedtoolcache/Python/3.9.24/x64/lib/python3.9/site-packages/nbclient/client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/opt/hostedtoolcache/Python/3.9.24/x64/lib/python3.9/site-packages/jupyter_core/utils/__init__.py", line 158, in wrapped
+    return loop.run_until_complete(inner)
+  File "/opt/hostedtoolcache/Python/3.9.24/x64/lib/python3.9/asyncio/base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "/opt/hostedtoolcache/Python/3.9.24/x64/lib/python3.9/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/opt/hostedtoolcache/Python/3.9.24/x64/lib/python3.9/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/hostedtoolcache/Python/3.9.24/x64/lib/python3.9/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+exp_dat <- read_csv("https://raw.githubusercontent.com/JackEdTaylor/expra-wise24/master/lecture/_static/data_vis_dat.csv")
+------------------
+
+----- stderr -----
+Warning message:
+“Failed to open 'https://raw.githubusercontent.com/JackEdTaylor/expra-wise24/master/lecture/_static/data_vis_dat.csv': The requested URL returned error: 404”
+------------------
+
+Error in open.connection(structure(4L, class = c("curl", "connection"), conn_id = <pointer: 0x5580d6f2bfc0>), : cannot open the connection
+Traceback:
+
+1. vroom::vroom(file, delim = ",", col_names = col_names, col_types = col_types, 
+ .     col_select = {
+ .         {
+ .             col_select
+ .         }
+ .     }, id = id, .name_repair = name_repair, skip = skip, n_max = n_max, 
+ .     na = na, quote = quote, comment = comment, skip_empty_rows = skip_empty_rows, 
+ .     trim_ws = trim_ws, escape_double = TRUE, escape_backslash = FALSE, 
+ .     locale = locale, guess_max = guess_max, show_col_types = show_col_types, 
+ .     progress = progress, altrep = lazy, num_threads = num_threads)
+2. vroom_(file, delim = delim %||% col_types$delim, col_names = col_names, 
+ .     col_types = col_types, id = id, skip = skip, col_select = col_select, 
+ .     name_repair = .name_repair, na = na, quote = quote, trim_ws = trim_ws, 
+ .     escape_double = escape_double, escape_backslash = escape_backslash, 
+ .     comment = comment, skip_empty_rows = skip_empty_rows, locale = locale, 
+ .     guess_max = guess_max, n_max = n_max, altrep = vroom_altrep(altrep), 
+ .     num_threads = num_threads, progress = progress)
+3. (function (con, ...) 
+ . UseMethod("open"))(structure(4L, class = c("curl", "connection"
+ . ), conn_id = <pointer: 0x5580d6f2bfc0>), "rb")
+4. open.connection(structure(4L, class = c("curl", "connection"), conn_id = <pointer: 0x5580d6f2bfc0>), 
+ .     "rb")
+5. .handleSimpleError(function (cnd) 
+ . {
+ .     watcher$capture_plot_and_output()
+ .     cnd <- sanitize_call(cnd)
+ .     watcher$push(cnd)
+ .     switch(on_error, continue = invokeRestart("eval_continue"), 
+ .         stop = invokeRestart("eval_stop"), error = NULL)
+ . }, "cannot open the connection", base::quote(open.connection(structure(4L, class = c("curl", 
+ . "connection"), conn_id = <pointer: 0x5580d6f2bfc0>), "rb")))
+
