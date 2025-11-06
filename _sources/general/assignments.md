@@ -41,7 +41,7 @@ The ExPra report is the final exam for the research project. The report is grade
 
 See the example ExPra Report, to see how the report should look:
 
-<b> <i class="fa-solid fa-file-pdf"></i> <a href="https://raw.githubusercontent.com/JackEdTaylor/expra-wise25/master/lecture/_static/EXPRA_Example_report.pdf">Download the Example ExPra Report</a>  </b>
+<b> <i class="fa-solid fa-file-pdf"></i> <a href="https://raw.githubusercontent.com/JackEdTaylor/expra-wise25/master/lecture/_static/EXPRA_Example_Report.pdf">Download the Example ExPra Report</a>  </b>
 
 For full details on the requirements for the report, see the ExPra student guide:
 
