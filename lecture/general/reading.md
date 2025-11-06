@@ -55,6 +55,10 @@ In addition to the reading above, here you can find some example literature, whi
 
 ### Group E: Concreteness Ratings
 
+* Brysbaert, M., Warriner, A. M., & Kuperman, V. (2014). Concreteness ratings for 40 thousand generally known English word lemmas. *Behavior Research Methods*, *46*, 904-911. http://doi.org/10.3758/s13428-013-0403-5
+
+* Kanske, P., & Kotz, S. A. (2010). Leipzig Affective Norms for German: A reliability study. *Behavior Research Methods*, *42*, 987-991. http://doi.org/10.3758/BRM.42.4.987
+
 * Paisios, D., Nathalie, H., & Labeye, E. (2023). Addressing the elephant in the middle: Implications of the midscale disagreement problem through the lens of Body-Object Interaction ratings. *Collabra: Psychology*, *9*(1), 84564. https://doi.org/10.1525/collabra.84564
 
 * Pollock, L. (2018). Statistical and methodological problems with concreteness and other semantic variables: A list memory experiment case study. *Behavior Research Methods*, *50*(3), 1198-1216. https://doi.org/10.3758/s13428-017-0938-y
