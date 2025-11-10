@@ -847,7 +847,7 @@ document.write(`
    &lt;chr&gt;          &lt;chr&gt;              &lt;dbl&gt;    &lt;dbl&gt;
  1 p015270        german              666.    0.903
  2 p063288        german              701.    0.95 
- 3 p072235        german              581.    0    
+ 3 p072235        german              581.    0.887
  4 p110412        german              533.    0.927
  5 p153023        german              669.    0.96 
  6 p241074        german              757.    0.913
@@ -859,7 +859,7 @@ document.write(`
 12 p539652        german              697.    0.98 
 13 p551117        german              993.    0.953
 14 p555715        german              712.    0.907
-15 p596865        german              807.    0    
+15 p596865        german              807.    0.947
 16 p697533        german              661.    0.9  
 17 p813475        german              629.    0.937
 </pre></div>
@@ -894,7 +894,7 @@ document.write(`
 .list-inline>li {display: inline-block}
 .list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
 </style>
-<ol class=list-inline><li>'p015270'</li><li>'p063288'</li><li>'p110412'</li><li>'p153023'</li><li>'p241074'</li><li>'p255886'</li><li>'p389724'</li><li>'p445631'</li><li>'p506691'</li><li>'p532670'</li><li>'p539652'</li><li>'p551117'</li><li>'p555715'</li><li>'p697533'</li><li>'p813475'</li></ol>
+<ol class=list-inline><li>'p015270'</li><li>'p063288'</li><li>'p072235'</li><li>'p110412'</li><li>'p153023'</li><li>'p241074'</li><li>'p255886'</li><li>'p389724'</li><li>'p445631'</li><li>'p506691'</li><li>'p532670'</li><li>'p539652'</li><li>'p551117'</li><li>'p555715'</li><li>'p596865'</li><li>'p697533'</li><li>'p813475'</li></ol>
 </div></div>
 </div>
 </section>
@@ -953,15 +953,15 @@ document.write(`
    text        ZipfSUBTLEX median_rt mean_acc
    &lt;chr&gt;             &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
  1 Akzente            2.71      607.        1
- 2 Drücker            3.01      598.        1
+ 2 Drücker            3.01      588.        1
  3 Erwachsener        3.95      579.        1
- 4 Exorzisten         2.64      773.        1
+ 4 Exorzisten         2.64      767.        1
  5 Fabel              2.6       588.        1
  6 Faulpelze          2.74      636.        1
  7 Figuren            4.38      534.        1
- 8 Filigrane          1.9       805.        1
+ 8 Filigrane          1.9       806.        1
  9 Geschicke          2.07      687.        1
-10 Gondel             3.11      769.        1
+10 Gondel             3.11      751.        1
 # ℹ 140 more rows
 </pre></div>
 </div>
@@ -999,18 +999,18 @@ lm(formula = median_rt ~ ZipfSUBTLEX_cent, data = word_averages)
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--252.30  -77.13  -25.34   57.71  446.47 
+-258.26  -82.43  -20.00   54.58  440.96 
 
 Coefficients:
                  Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)       701.685      9.400  74.651  &lt; 2e-16 ***
-ZipfSUBTLEX_cent  -72.202      9.494  -7.605 3.05e-12 ***
+(Intercept)       704.978      9.516  74.087  &lt; 2e-16 ***
+ZipfSUBTLEX_cent  -74.860      9.611  -7.789 1.09e-12 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Residual standard error: 115.1 on 148 degrees of freedom
-Multiple R-squared:  0.281,	Adjusted R-squared:  0.2761 
-F-statistic: 57.83 on 1 and 148 DF,  p-value: 3.047e-12
+Residual standard error: 116.5 on 148 degrees of freedom
+Multiple R-squared:  0.2907,	Adjusted R-squared:  0.2859 
+F-statistic: 60.66 on 1 and 148 DF,  p-value: 1.091e-12
 </pre></div>
 </div>
 </div>
@@ -1033,7 +1033,7 @@ F-statistic: 57.83 on 1 and 148 DF,  p-value: 3.047e-12
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/dd0fdc09081265cd4367a1e1debca13973d334772fba74158eae004d56d61608.png"><img alt="../_images/dd0fdc09081265cd4367a1e1debca13973d334772fba74158eae004d56d61608.png" src="../_images/dd0fdc09081265cd4367a1e1debca13973d334772fba74158eae004d56d61608.png" style="width: 210px; height: 180px;" />
+<a class="reference internal image-reference" href="../_images/36cbb4c693e67f6465128c50740f1c9b1685836dde5f99b2d64683492d0b6743.png"><img alt="../_images/36cbb4c693e67f6465128c50740f1c9b1685836dde5f99b2d64683492d0b6743.png" src="../_images/36cbb4c693e67f6465128c50740f1c9b1685836dde5f99b2d64683492d0b6743.png" style="width: 210px; height: 180px;" />
 </a>
 </div>
 </div>
@@ -1087,15 +1087,15 @@ F-statistic: 57.83 on 1 and 148 DF,  p-value: 3.047e-12
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># A tibble: 300 × 8
    text         condition    snd median_rt mean_acc snd_cent dum_lex dev_lex
    &lt;chr&gt;        &lt;chr&gt;      &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
- 1 Abgegöbe     pseudoword 0.614      879.        1   0.0104       0    -<span class=" -Color -Color-Red">0.5</span>
+ 1 Abgegöbe     pseudoword 0.614      841.        1   0.0104       0    -<span class=" -Color -Color-Red">0.5</span>
  2 Akzente      word       0.716      607.        1   0.113        1     0.5
- 3 Austerbafer  pseudoword 0.616      805.        1   0.0129       0    -<span class=" -Color -Color-Red">0.5</span>
+ 3 Austerbafer  pseudoword 0.616      809.        1   0.0129       0    -<span class=" -Color -Color-Red">0.5</span>
  4 Bünktchen    pseudoword 0.585      995.        1  -<span class=" -Color -Color-Red">0.0180</span>       0    -<span class=" -Color -Color-Red">0.5</span>
  5 Cermelen     pseudoword 0.548      673.        1  -<span class=" -Color -Color-Red">0.0556</span>       0    -<span class=" -Color -Color-Red">0.5</span>
- 6 Drücker      word       0.573      598.        1  -<span class=" -Color -Color-Red">0.0303</span>       1     0.5
- 7 Durchszelten pseudoword 0.567     1069.        1  -<span class=" -Color -Color-Red">0.0362</span>       0    -<span class=" -Color -Color-Red">0.5</span>
+ 6 Drücker      word       0.573      588.        1  -<span class=" -Color -Color-Red">0.0303</span>       1     0.5
+ 7 Durchszelten pseudoword 0.567     1171.        1  -<span class=" -Color -Color-Red">0.0362</span>       0    -<span class=" -Color -Color-Red">0.5</span>
  8 Erwachsener  word       0.681      579.        1   0.0776       1     0.5
- 9 Exorzisten   word       0.624      773.        1   0.0201       1     0.5
+ 9 Exorzisten   word       0.624      767.        1   0.0201       1     0.5
 10 Exzingsener  pseudoword 0.532      832.        1  -<span class=" -Color -Color-Red">0.0709</span>       0    -<span class=" -Color -Color-Red">0.5</span>
 # ℹ 290 more rows
 </pre></div>
@@ -1121,20 +1121,20 @@ lm(formula = median_rt ~ dev_lex * snd_cent, data = stim_averages)
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--243.84 -106.32  -39.40   72.03 1463.24 
+-227.98 -104.34  -41.63   74.04  505.62 
 
 Coefficients:
                  Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)        770.43      14.96  51.507  &lt; 2e-16 ***
-dev_lex           -102.39      29.92  -3.423 0.000707 ***
-snd_cent           227.36     150.83   1.507 0.132776    
-dev_lex:snd_cent  -906.35     301.65  -3.005 0.002887 ** 
+(Intercept)        763.02      13.31  57.310  &lt; 2e-16 ***
+dev_lex            -73.46      26.63  -2.759  0.00616 ** 
+snd_cent            93.35     134.25   0.695  0.48741    
+dev_lex:snd_cent  -735.12     268.50  -2.738  0.00656 ** 
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Residual standard error: 160.9 on 296 degrees of freedom
-Multiple R-squared:  0.072,	Adjusted R-squared:  0.0626 
-F-statistic: 7.655 on 3 and 296 DF,  p-value: 6.054e-05
+Residual standard error: 143.2 on 296 degrees of freedom
+Multiple R-squared:  0.06398,	Adjusted R-squared:  0.05449 
+F-statistic: 6.744 on 3 and 296 DF,  p-value: 0.000205
 </pre></div>
 </div>
 </div>
@@ -1155,7 +1155,7 @@ F-statistic: 7.655 on 3 and 296 DF,  p-value: 6.054e-05
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/a59c81ade1fa15fccafed080eacd5204efd6be469c01052656401db77adf3209.png"><img alt="../_images/a59c81ade1fa15fccafed080eacd5204efd6be469c01052656401db77adf3209.png" src="../_images/a59c81ade1fa15fccafed080eacd5204efd6be469c01052656401db77adf3209.png" style="width: 210px; height: 180px;" />
+<a class="reference internal image-reference" href="../_images/ff8593544d55a0988083a4f6c4a2bcc6ad9770869de4860da03010c40132e62d.png"><img alt="../_images/ff8593544d55a0988083a4f6c4a2bcc6ad9770869de4860da03010c40132e62d.png" src="../_images/ff8593544d55a0988083a4f6c4a2bcc6ad9770869de4860da03010c40132e62d.png" style="width: 210px; height: 180px;" />
 </a>
 </div>
 </div>
