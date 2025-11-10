@@ -740,7 +740,7 @@ document.write(`
 <section id="join-the-data-together">
 <h3>5: Join the Data Together<a class="headerlink" href="#join-the-data-together" title="Link to this heading">#</a></h3>
 <p>The easiest way to work with small datasets like this is to just join the dataframes together. This will create some redundancy (e.g., participant ages will be repeated 300 times), but can make things easier to work with.</p>
-<p>Here we use <code class="docutils literal notranslate"><span class="pre">left_join()</span></code> to find add information about participant demographics and features of the stimuli. This identifies rows that the dataframes have in common, and joins them togeher. Notice that we now have one big dataframe with all of the information about every trial.</p>
+<p>Here we use <code class="docutils literal notranslate"><span class="pre">left_join()</span></code> to find add information about participant demographics and features of the stimuli. This identifies columns that the dataframes have in common, and joins them togeher. Notice that we now have one big dataframe with all of the information about every trial.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">all_dat</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">raw_data</span><span class="w"> </span><span class="o">|&gt;</span>
