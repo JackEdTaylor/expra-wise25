@@ -532,25 +532,17 @@ document.write(`
 <p>Now we’ve got the basics down, in this session we’ll look at how to make a figure ready for a report, poster, or presentation.</p>
 <p>In addition to the packages we used in the last session, you’ll ned to make sure you have <code class="docutils literal notranslate"><span class="pre">colorBlindness</span></code> and <code class="docutils literal notranslate"><span class="pre">patchwork</span></code> installed.</p>
 <div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-    <span class="n">options</span><span class="p">(</span><span class="nb">repr</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="nb">repr</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">height</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-            <span class="o">^</span>
-<span class="ne">SyntaxError</span>: expression cannot contain assignment, perhaps you meant &quot;==&quot;?
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>  <span class="c1"># for plotting</span>
-<span class="n">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>    <span class="c1"># for data wrangling</span>
-<span class="n">library</span><span class="p">(</span><span class="n">tidyr</span><span class="p">)</span>    <span class="c1"># for data wrangling</span>
-<span class="n">library</span><span class="p">(</span><span class="n">readr</span><span class="p">)</span>    <span class="c1"># for importing data</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span><span class="w">  </span><span class="c1"># for plotting</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span><span class="w">    </span><span class="c1"># for data wrangling</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">tidyr</span><span class="p">)</span><span class="w">    </span><span class="c1"># for data wrangling</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">readr</span><span class="p">)</span><span class="w">    </span><span class="c1"># for importing data</span>
 
-<span class="n">library</span><span class="p">(</span><span class="n">Cairo</span><span class="p">)</span>           <span class="c1"># for saving plots with antialiasing</span>
-<span class="n">library</span><span class="p">(</span><span class="n">colorBlindness</span><span class="p">)</span>  <span class="c1"># for simulating colour blindness</span>
-<span class="n">library</span><span class="p">(</span><span class="n">patchwork</span><span class="p">)</span>       <span class="c1"># for arranging plots</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">Cairo</span><span class="p">)</span><span class="w">           </span><span class="c1"># for saving plots with antialiasing</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">colorBlindness</span><span class="p">)</span><span class="w">  </span><span class="c1"># for simulating colour blindness</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">patchwork</span><span class="p">)</span><span class="w">       </span><span class="c1"># for arranging plots</span>
 </pre></div>
 </div>
 </div>
@@ -558,7 +550,7 @@ document.write(`
 <p>You can import the same data as in the last session:</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exp_dat</span> <span class="o">&lt;-</span> <span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/JackEdTaylor/expra-wise24/master/lecture/_static/data_vis_dat.csv&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">exp_dat</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/JackEdTaylor/expra-wise25/master/lecture/_static/data_vis_dat.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -568,46 +560,74 @@ document.write(`
 <p>There are several default themes built into <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code>. These make it easy to quickly restyle a plot. For example, here is a plot from the last session, using the default <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> theme.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ggplot</span><span class="p">(</span><span class="n">exp_dat</span><span class="p">,</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">read_score</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">memory_score</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="n">time</span><span class="p">))</span> <span class="o">+</span>
-  <span class="n">geom_point</span><span class="p">()</span> <span class="o">+</span>
-  <span class="n">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;lm&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">exp_dat</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">read_score</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">memory_score</span><span class="p">,</span><span class="w"> </span><span class="n">colour</span><span class="o">=</span><span class="n">time</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s">&quot;lm&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`geom_smooth()` using formula = &#39;y ~ x&#39;
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/9560d911552e94f1277e29b6313362ba89bd410ad920e82e6ad3c9096872c3b6.png"><img alt="../_images/9560d911552e94f1277e29b6313362ba89bd410ad920e82e6ad3c9096872c3b6.png" src="../_images/9560d911552e94f1277e29b6313362ba89bd410ad920e82e6ad3c9096872c3b6.png" style="width: 300px; height: 240px;" />
+</a>
 </div>
 </div>
 <p>We can restyle this to be in a black-and-white theme with <code class="docutils literal notranslate"><span class="pre">theme_bw()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ggplot</span><span class="p">(</span><span class="n">exp_dat</span><span class="p">,</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">read_score</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">memory_score</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="n">time</span><span class="p">))</span> <span class="o">+</span>
-  <span class="n">geom_point</span><span class="p">()</span> <span class="o">+</span>
-  <span class="n">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;lm&quot;</span><span class="p">)</span> <span class="o">+</span>
-  <span class="n">theme_bw</span><span class="p">()</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">exp_dat</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">read_score</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">memory_score</span><span class="p">,</span><span class="w"> </span><span class="n">colour</span><span class="o">=</span><span class="n">time</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s">&quot;lm&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">theme_bw</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`geom_smooth()` using formula = &#39;y ~ x&#39;
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/88910a8b7b50c25c5bdd8d4ecdecbcbb7b652c0ba2733b83ea0f769fb7cfc591.png"><img alt="../_images/88910a8b7b50c25c5bdd8d4ecdecbcbb7b652c0ba2733b83ea0f769fb7cfc591.png" src="../_images/88910a8b7b50c25c5bdd8d4ecdecbcbb7b652c0ba2733b83ea0f769fb7cfc591.png" style="width: 300px; height: 240px;" />
+</a>
 </div>
 </div>
 <p>Another theme that tends to look quite good is <code class="docutils literal notranslate"><span class="pre">theme_classic()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ggplot</span><span class="p">(</span><span class="n">exp_dat</span><span class="p">,</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">read_score</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">memory_score</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="n">time</span><span class="p">))</span> <span class="o">+</span>
-  <span class="n">geom_point</span><span class="p">()</span> <span class="o">+</span>
-  <span class="n">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;lm&quot;</span><span class="p">)</span> <span class="o">+</span>
-  <span class="n">theme_classic</span><span class="p">()</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">exp_dat</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">read_score</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">memory_score</span><span class="p">,</span><span class="w"> </span><span class="n">colour</span><span class="o">=</span><span class="n">time</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s">&quot;lm&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">theme_classic</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`geom_smooth()` using formula = &#39;y ~ x&#39;
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/51a2e6199ed8f6388ee5cf53db579e8f79da49f5fcfae7bcdc8a2e2fad386d1b.png"><img alt="../_images/51a2e6199ed8f6388ee5cf53db579e8f79da49f5fcfae7bcdc8a2e2fad386d1b.png" src="../_images/51a2e6199ed8f6388ee5cf53db579e8f79da49f5fcfae7bcdc8a2e2fad386d1b.png" style="width: 300px; height: 240px;" />
+</a>
 </div>
 </div>
 <p>You can find a list of available themes on the <a class="reference external" href="https://ggplot2.tidyverse.org/reference/ggtheme.html"><code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> documentation for complete themes</a>.</p>
 <p>You can also edit specific elements in the theme with the <code class="docutils literal notranslate"><span class="pre">theme()</span></code> function. For example, we could make a very ugly graph by turning the axes purple like so:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ggplot</span><span class="p">(</span><span class="n">exp_dat</span><span class="p">,</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">read_score</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">memory_score</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="n">time</span><span class="p">))</span> <span class="o">+</span>
-  <span class="n">geom_point</span><span class="p">()</span> <span class="o">+</span>
-  <span class="n">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;lm&quot;</span><span class="p">)</span> <span class="o">+</span>
-  <span class="n">theme_classic</span><span class="p">()</span> <span class="o">+</span>
-  <span class="n">theme</span><span class="p">(</span><span class="n">axis</span><span class="o">.</span><span class="n">line</span> <span class="o">=</span> <span class="n">element_line</span><span class="p">(</span><span class="n">colour</span> <span class="o">=</span> <span class="s2">&quot;purple&quot;</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">exp_dat</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">read_score</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">memory_score</span><span class="p">,</span><span class="w"> </span><span class="n">colour</span><span class="o">=</span><span class="n">time</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s">&quot;lm&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">theme_classic</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">theme</span><span class="p">(</span><span class="n">axis.line</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_line</span><span class="p">(</span><span class="n">colour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;purple&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`geom_smooth()` using formula = &#39;y ~ x&#39;
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/e15c094c228b4f3ebaaf739c3264448359d9c66d5866a4269e5bef3b29f705f0.png"><img alt="../_images/e15c094c228b4f3ebaaf739c3264448359d9c66d5866a4269e5bef3b29f705f0.png" src="../_images/e15c094c228b4f3ebaaf739c3264448359d9c66d5866a4269e5bef3b29f705f0.png" style="width: 300px; height: 240px;" />
+</a>
 </div>
 </div>
 <p>You can find all arguments for the <code class="docutils literal notranslate"><span class="pre">theme()</span></code> function <a class="reference external" href="https://ggplot2.tidyverse.org/reference/theme.html">in the documentation</a>.</p>
@@ -618,17 +638,24 @@ document.write(`
 <p>We can pass the axis labels that we want to the <code class="docutils literal notranslate"><span class="pre">labs()</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ggplot</span><span class="p">(</span><span class="n">exp_dat</span><span class="p">,</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">read_score</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">memory_score</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="n">time</span><span class="p">))</span> <span class="o">+</span>
-  <span class="n">geom_point</span><span class="p">()</span> <span class="o">+</span>
-  <span class="n">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;lm&quot;</span><span class="p">)</span> <span class="o">+</span>
-  <span class="n">theme_classic</span><span class="p">()</span> <span class="o">+</span>
-  <span class="n">labs</span><span class="p">(</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Reading Comprehension Score&quot;</span><span class="p">,</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;N-Back Score&quot;</span><span class="p">,</span>
-    <span class="n">colour</span> <span class="o">=</span> <span class="s2">&quot;Test Session&quot;</span>
-  <span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">exp_dat</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">read_score</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">memory_score</span><span class="p">,</span><span class="w"> </span><span class="n">colour</span><span class="o">=</span><span class="n">time</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s">&quot;lm&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">theme_classic</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">labs</span><span class="p">(</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Reading Comprehension Score&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;N-Back Score&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">colour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Test Session&quot;</span>
+<span class="w">  </span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`geom_smooth()` using formula = &#39;y ~ x&#39;
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/73baabc510f1a2bd4d26ac673d164933c8ad17325d383bf88ff66ad7c72a7385.png"><img alt="../_images/73baabc510f1a2bd4d26ac673d164933c8ad17325d383bf88ff66ad7c72a7385.png" src="../_images/73baabc510f1a2bd4d26ac673d164933c8ad17325d383bf88ff66ad7c72a7385.png" style="width: 300px; height: 240px;" />
+</a>
 </div>
 </div>
 </section>
@@ -638,35 +665,49 @@ document.write(`
 <p>We can address this with the <code class="docutils literal notranslate"><span class="pre">scale_*</span></code> functions. For example, here we use <code class="docutils literal notranslate"><span class="pre">scale_x_continuous()</span></code> to have breaks from 60 to 120 in steps of 10.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ggplot</span><span class="p">(</span><span class="n">exp_dat</span><span class="p">,</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">read_score</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">memory_score</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="n">time</span><span class="p">))</span> <span class="o">+</span>
-  <span class="n">geom_point</span><span class="p">()</span> <span class="o">+</span>
-  <span class="n">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;lm&quot;</span><span class="p">)</span> <span class="o">+</span>
-  <span class="n">theme_classic</span><span class="p">()</span> <span class="o">+</span>
-  <span class="n">labs</span><span class="p">(</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Reading Comprehension Score&quot;</span><span class="p">,</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;N-Back Score&quot;</span><span class="p">,</span>
-    <span class="n">colour</span> <span class="o">=</span> <span class="s2">&quot;Test Session&quot;</span>
-  <span class="p">)</span> <span class="o">+</span>
-  <span class="n">scale_x_continuous</span><span class="p">(</span><span class="n">breaks</span> <span class="o">=</span> <span class="n">seq</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">exp_dat</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">read_score</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">memory_score</span><span class="p">,</span><span class="w"> </span><span class="n">colour</span><span class="o">=</span><span class="n">time</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s">&quot;lm&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">theme_classic</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">labs</span><span class="p">(</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Reading Comprehension Score&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;N-Back Score&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">colour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Test Session&quot;</span>
+<span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">scale_x_continuous</span><span class="p">(</span><span class="n">breaks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">seq</span><span class="p">(</span><span class="m">60</span><span class="p">,</span><span class="w"> </span><span class="m">120</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`geom_smooth()` using formula = &#39;y ~ x&#39;
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/9a1d6198f0068f48e9b6598a80228b896e2df98d0962681bed86e305432b2da0.png"><img alt="../_images/9a1d6198f0068f48e9b6598a80228b896e2df98d0962681bed86e305432b2da0.png" src="../_images/9a1d6198f0068f48e9b6598a80228b896e2df98d0962681bed86e305432b2da0.png" style="width: 300px; height: 240px;" />
+</a>
 </div>
 </div>
 <p>We could also pass a function to the <code class="docutils literal notranslate"><span class="pre">breaks</span></code> argument to do this for us. For example, <code class="docutils literal notranslate"><span class="pre">scales::breaks_pretty()</span></code> will automatically assign some sensible breaks. We can set <code class="docutils literal notranslate"><span class="pre">n=7</span></code> to ask for 7 breaks (or as close as possible while keeping the breaks sensible).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ggplot</span><span class="p">(</span><span class="n">exp_dat</span><span class="p">,</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">read_score</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">memory_score</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="n">time</span><span class="p">))</span> <span class="o">+</span>
-  <span class="n">geom_point</span><span class="p">()</span> <span class="o">+</span>
-  <span class="n">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;lm&quot;</span><span class="p">)</span> <span class="o">+</span>
-  <span class="n">theme_classic</span><span class="p">()</span> <span class="o">+</span>
-  <span class="n">labs</span><span class="p">(</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Reading Comprehension Score&quot;</span><span class="p">,</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;N-Back Score&quot;</span><span class="p">,</span>
-    <span class="n">colour</span> <span class="o">=</span> <span class="s2">&quot;Test Session&quot;</span>
-  <span class="p">)</span> <span class="o">+</span>
-  <span class="n">scale_x_continuous</span><span class="p">(</span><span class="n">breaks</span> <span class="o">=</span> <span class="n">scales</span><span class="p">::</span><span class="n">breaks_pretty</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">7</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">exp_dat</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">read_score</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">memory_score</span><span class="p">,</span><span class="w"> </span><span class="n">colour</span><span class="o">=</span><span class="n">time</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s">&quot;lm&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">theme_classic</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">labs</span><span class="p">(</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Reading Comprehension Score&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;N-Back Score&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">colour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Test Session&quot;</span>
+<span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">scale_x_continuous</span><span class="p">(</span><span class="n">breaks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scales</span><span class="o">::</span><span class="nf">breaks_pretty</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="m">7</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`geom_smooth()` using formula = &#39;y ~ x&#39;
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/9a1d6198f0068f48e9b6598a80228b896e2df98d0962681bed86e305432b2da0.png"><img alt="../_images/9a1d6198f0068f48e9b6598a80228b896e2df98d0962681bed86e305432b2da0.png" src="../_images/9a1d6198f0068f48e9b6598a80228b896e2df98d0962681bed86e305432b2da0.png" style="width: 300px; height: 240px;" />
+</a>
 </div>
 </div>
 </section>
@@ -681,85 +722,113 @@ document.write(`
 <br>
 The easiest way to change the labels' order is to set the variable as a factor before creating the plot. This way, we can explicitly force the order to make sense. Notice that this changes the order of legend items:<div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exp_dat</span> <span class="o">|&gt;</span>
-  <span class="n">mutate</span><span class="p">(</span><span class="n">time</span> <span class="o">=</span> <span class="n">factor</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">levels</span> <span class="o">=</span> <span class="n">c</span><span class="p">(</span><span class="s2">&quot;morning&quot;</span><span class="p">,</span> <span class="s2">&quot;midday&quot;</span><span class="p">,</span> <span class="s2">&quot;evening&quot;</span><span class="p">)))</span> <span class="o">|&gt;</span>
-  <span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">read_score</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">memory_score</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="n">time</span><span class="p">))</span> <span class="o">+</span>
-  <span class="n">geom_point</span><span class="p">()</span> <span class="o">+</span>
-  <span class="n">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;lm&quot;</span><span class="p">)</span> <span class="o">+</span>
-  <span class="n">theme_classic</span><span class="p">()</span> <span class="o">+</span>
-  <span class="n">labs</span><span class="p">(</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Reading Comprehension Score&quot;</span><span class="p">,</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;N-Back Score&quot;</span><span class="p">,</span>
-    <span class="n">colour</span> <span class="o">=</span> <span class="s2">&quot;Test Session&quot;</span>
-  <span class="p">)</span> 
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">exp_dat</span><span class="w"> </span><span class="o">|&gt;</span>
+<span class="w">  </span><span class="nf">mutate</span><span class="p">(</span><span class="n">time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">factor</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="n">levels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;morning&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;midday&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;evening&quot;</span><span class="p">)))</span><span class="w"> </span><span class="o">|&gt;</span>
+<span class="w">  </span><span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">read_score</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">memory_score</span><span class="p">,</span><span class="w"> </span><span class="n">colour</span><span class="o">=</span><span class="n">time</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s">&quot;lm&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">theme_classic</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">labs</span><span class="p">(</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Reading Comprehension Score&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;N-Back Score&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">colour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Test Session&quot;</span>
+<span class="w">  </span><span class="p">)</span><span class="w"> </span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`geom_smooth()` using formula = &#39;y ~ x&#39;
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/539eeff482fcf54458bb4788a04eb52f0a29c16a6c1905d30afbcdce42e92a9a.png"><img alt="../_images/539eeff482fcf54458bb4788a04eb52f0a29c16a6c1905d30afbcdce42e92a9a.png" src="../_images/539eeff482fcf54458bb4788a04eb52f0a29c16a6c1905d30afbcdce42e92a9a.png" style="width: 300px; height: 240px;" />
+</a>
 </div>
 </div>
 <p>We could use the same approach to change the legend labels. Here, we make the first letter upper-case:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># set the order and labels for the time variable</span>
-<span class="n">exp_dat_fct</span> <span class="o">&lt;-</span> <span class="n">exp_dat</span> <span class="o">|&gt;</span>
-  <span class="n">mutate</span><span class="p">(</span><span class="n">time</span> <span class="o">=</span> <span class="n">factor</span><span class="p">(</span>
-    <span class="n">time</span><span class="p">,</span>
-    <span class="n">levels</span> <span class="o">=</span> <span class="n">c</span><span class="p">(</span><span class="s2">&quot;morning&quot;</span><span class="p">,</span> <span class="s2">&quot;midday&quot;</span><span class="p">,</span> <span class="s2">&quot;evening&quot;</span><span class="p">),</span>
-    <span class="n">labels</span> <span class="o">=</span> <span class="n">c</span><span class="p">(</span><span class="s2">&quot;Morning&quot;</span><span class="p">,</span> <span class="s2">&quot;Midday&quot;</span><span class="p">,</span> <span class="s2">&quot;Evening&quot;</span><span class="p">)</span>
-  <span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># set the order and labels for the time variable</span>
+<span class="n">exp_dat_fct</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">exp_dat</span><span class="w"> </span><span class="o">|&gt;</span>
+<span class="w">  </span><span class="nf">mutate</span><span class="p">(</span><span class="n">time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">factor</span><span class="p">(</span>
+<span class="w">    </span><span class="n">time</span><span class="p">,</span>
+<span class="w">    </span><span class="n">levels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;morning&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;midday&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;evening&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="n">labels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Morning&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Midday&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Evening&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">))</span>
 
-<span class="n">exp_dat_fct</span> <span class="o">|&gt;</span>
-  <span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">read_score</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">memory_score</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="n">time</span><span class="p">))</span> <span class="o">+</span>
-  <span class="n">geom_point</span><span class="p">()</span> <span class="o">+</span>
-  <span class="n">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;lm&quot;</span><span class="p">)</span> <span class="o">+</span>
-  <span class="n">theme_classic</span><span class="p">()</span> <span class="o">+</span>
-  <span class="n">labs</span><span class="p">(</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Reading Comprehension Score&quot;</span><span class="p">,</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;N-Back Score&quot;</span><span class="p">,</span>
-    <span class="n">colour</span> <span class="o">=</span> <span class="s2">&quot;Test Session&quot;</span>
-  <span class="p">)</span>
+<span class="n">exp_dat_fct</span><span class="w"> </span><span class="o">|&gt;</span>
+<span class="w">  </span><span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">read_score</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">memory_score</span><span class="p">,</span><span class="w"> </span><span class="n">colour</span><span class="o">=</span><span class="n">time</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s">&quot;lm&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">theme_classic</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">labs</span><span class="p">(</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Reading Comprehension Score&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;N-Back Score&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">colour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Test Session&quot;</span>
+<span class="w">  </span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`geom_smooth()` using formula = &#39;y ~ x&#39;
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/264a5ed434c51fe45a1b9e835e4c6e4a4ebcbcedc50f9220ef3c2775b0e2af24.png"><img alt="../_images/264a5ed434c51fe45a1b9e835e4c6e4a4ebcbcedc50f9220ef3c2775b0e2af24.png" src="../_images/264a5ed434c51fe45a1b9e835e4c6e4a4ebcbcedc50f9220ef3c2775b0e2af24.png" style="width: 300px; height: 240px;" />
+</a>
 </div>
 </div>
 <p>Finally, we can move the legend to reduce the white space in the plot. We could move the figure to be above the plot like so with the <code class="docutils literal notranslate"><span class="pre">legend.position</span></code> argument of the <code class="docutils literal notranslate"><span class="pre">theme()</span></code> function:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exp_dat_fct</span> <span class="o">|&gt;</span>
-  <span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">read_score</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">memory_score</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="n">time</span><span class="p">))</span> <span class="o">+</span>
-  <span class="n">geom_point</span><span class="p">()</span> <span class="o">+</span>
-  <span class="n">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;lm&quot;</span><span class="p">)</span> <span class="o">+</span>
-  <span class="n">theme_classic</span><span class="p">()</span> <span class="o">+</span>
-  <span class="n">labs</span><span class="p">(</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Reading Comprehension Score&quot;</span><span class="p">,</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;N-Back Score&quot;</span><span class="p">,</span>
-    <span class="n">colour</span> <span class="o">=</span> <span class="s2">&quot;Test Session&quot;</span>
-  <span class="p">)</span> <span class="o">+</span>
-  <span class="n">theme</span><span class="p">(</span><span class="n">legend</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="s2">&quot;top&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">exp_dat_fct</span><span class="w"> </span><span class="o">|&gt;</span>
+<span class="w">  </span><span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">read_score</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">memory_score</span><span class="p">,</span><span class="w"> </span><span class="n">colour</span><span class="o">=</span><span class="n">time</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s">&quot;lm&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">theme_classic</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">labs</span><span class="p">(</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Reading Comprehension Score&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;N-Back Score&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">colour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Test Session&quot;</span>
+<span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">theme</span><span class="p">(</span><span class="n">legend.position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;top&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`geom_smooth()` using formula = &#39;y ~ x&#39;
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/f6ba96a812cbd3db76465ac825ed3d86f37728a8f2d76b925e11988e13d7af7b.png"><img alt="../_images/f6ba96a812cbd3db76465ac825ed3d86f37728a8f2d76b925e11988e13d7af7b.png" src="../_images/f6ba96a812cbd3db76465ac825ed3d86f37728a8f2d76b925e11988e13d7af7b.png" style="width: 300px; height: 240px;" />
+</a>
 </div>
 </div>
 <p>We could also put the legend in that empty space at the bottom right section inside the plot.</p>
 <p>We have to use standardised units between 0 and 1. We set the position to <code class="docutils literal notranslate"><span class="pre">c(1,</span> <span class="pre">0)</span></code>, meaning to place the axis at 100% of the x axis, and 0% of the y axis. Here, we also set the justification to match, with <code class="docutils literal notranslate"><span class="pre">c(1,</span> <span class="pre">0)</span></code>. This ensures that our legend is snug against the axes of the plot. Finally, we remove the legend background, to avoid occuluding any data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exp_dat_fct</span> <span class="o">|&gt;</span>
-  <span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">read_score</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">memory_score</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="n">time</span><span class="p">))</span> <span class="o">+</span>
-  <span class="n">geom_point</span><span class="p">()</span> <span class="o">+</span>
-  <span class="n">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;lm&quot;</span><span class="p">)</span> <span class="o">+</span>
-  <span class="n">theme_classic</span><span class="p">()</span> <span class="o">+</span>
-  <span class="n">labs</span><span class="p">(</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Reading Comprehension Score&quot;</span><span class="p">,</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;N-Back Score&quot;</span><span class="p">,</span>
-    <span class="n">colour</span> <span class="o">=</span> <span class="s2">&quot;Test Session&quot;</span>
-  <span class="p">)</span> <span class="o">+</span>
-  <span class="n">theme</span><span class="p">(</span>
-    <span class="n">legend</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="n">c</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
-    <span class="n">legend</span><span class="o">.</span><span class="n">justification</span> <span class="o">=</span> <span class="n">c</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
-    <span class="n">legend</span><span class="o">.</span><span class="n">background</span> <span class="o">=</span> <span class="n">element_blank</span><span class="p">()</span>
-  <span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">exp_dat_fct</span><span class="w"> </span><span class="o">|&gt;</span>
+<span class="w">  </span><span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">read_score</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">memory_score</span><span class="p">,</span><span class="w"> </span><span class="n">colour</span><span class="o">=</span><span class="n">time</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s">&quot;lm&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">theme_classic</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">labs</span><span class="p">(</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Reading Comprehension Score&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;N-Back Score&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">colour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Test Session&quot;</span>
+<span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">theme</span><span class="p">(</span>
+<span class="w">    </span><span class="n">legend.position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">),</span>
+<span class="w">    </span><span class="n">legend.justification</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">),</span>
+<span class="w">    </span><span class="n">legend.background</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_blank</span><span class="p">()</span>
+<span class="w">  </span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`geom_smooth()` using formula = &#39;y ~ x&#39;
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/e4e671b4eb8421733fd13f07b9e63c5e4322ba1dbe858a2f0091a4e62f0cccd0.png"><img alt="../_images/e4e671b4eb8421733fd13f07b9e63c5e4322ba1dbe858a2f0091a4e62f0cccd0.png" src="../_images/e4e671b4eb8421733fd13f07b9e63c5e4322ba1dbe858a2f0091a4e62f0cccd0.png" style="width: 300px; height: 240px;" />
+</a>
 </div>
 </div>
 </section>
@@ -771,51 +840,65 @@ The easiest way to change the labels' order is to set the variable as a factor b
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pl</span> <span class="o">&lt;-</span> <span class="n">exp_dat_fct</span> <span class="o">|&gt;</span>
-  <span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">read_score</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">memory_score</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="n">time</span><span class="p">))</span> <span class="o">+</span>
-  <span class="n">geom_point</span><span class="p">()</span> <span class="o">+</span>
-  <span class="n">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;lm&quot;</span><span class="p">)</span> <span class="o">+</span>
-  <span class="n">theme_classic</span><span class="p">()</span> <span class="o">+</span>
-  <span class="n">labs</span><span class="p">(</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Reading Comprehension Score&quot;</span><span class="p">,</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;N-Back Score&quot;</span><span class="p">,</span>
-    <span class="n">colour</span> <span class="o">=</span> <span class="s2">&quot;Test Session&quot;</span>
-  <span class="p">)</span> <span class="o">+</span>
-  <span class="n">theme</span><span class="p">(</span>
-    <span class="n">legend</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="n">c</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
-    <span class="n">legend</span><span class="o">.</span><span class="n">justification</span> <span class="o">=</span> <span class="n">c</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
-    <span class="n">legend</span><span class="o">.</span><span class="n">background</span> <span class="o">=</span> <span class="n">element_blank</span><span class="p">()</span>
-  <span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">pl</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">exp_dat_fct</span><span class="w"> </span><span class="o">|&gt;</span>
+<span class="w">  </span><span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">read_score</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">memory_score</span><span class="p">,</span><span class="w"> </span><span class="n">colour</span><span class="o">=</span><span class="n">time</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s">&quot;lm&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">theme_classic</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">labs</span><span class="p">(</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Reading Comprehension Score&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;N-Back Score&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">colour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Test Session&quot;</span>
+<span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">theme</span><span class="p">(</span>
+<span class="w">    </span><span class="n">legend.position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">),</span>
+<span class="w">    </span><span class="n">legend.justification</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">),</span>
+<span class="w">    </span><span class="n">legend.background</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_blank</span><span class="p">()</span>
+<span class="w">  </span><span class="p">)</span>
 
-<span class="n">cvdPlot</span><span class="p">(</span><span class="n">pl</span><span class="p">)</span>
+<span class="nf">cvdPlot</span><span class="p">(</span><span class="n">pl</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`geom_smooth()` using formula = &#39;y ~ x&#39;
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/5137318f1960adb92b5df1f3a29d81a9bcc4b3d5ae6e3f61341d977c850aa173.png"><img alt="../_images/5137318f1960adb92b5df1f3a29d81a9bcc4b3d5ae6e3f61341d977c850aa173.png" src="../_images/5137318f1960adb92b5df1f3a29d81a9bcc4b3d5ae6e3f61341d977c850aa173.png" style="width: 480px; height: 420px;" />
+</a>
 </div>
 </div>
 <p>People with deuteranopia and protanopia will have a hard time distinguishing our red and green colours. We could use viridis as alternative colours. This also makes sense because viridis is an ordered colour palette, and our time of day variable is ordered from Morning to Evening.</p>
 <p>We use the <code class="docutils literal notranslate"><span class="pre">scale_colour_viridis_d()</span></code> function, which tells <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> to use the viridis palette for the colour mapping. The <code class="docutils literal notranslate"><span class="pre">_d</span></code> part refers to the fact that we are mapping to a discrete (categorical) variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pl</span> <span class="o">&lt;-</span> <span class="n">exp_dat_fct</span> <span class="o">|&gt;</span>
-  <span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">read_score</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">memory_score</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="n">time</span><span class="p">))</span> <span class="o">+</span>
-  <span class="n">geom_point</span><span class="p">()</span> <span class="o">+</span>
-  <span class="n">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;lm&quot;</span><span class="p">)</span> <span class="o">+</span>
-  <span class="n">theme_classic</span><span class="p">()</span> <span class="o">+</span>
-  <span class="n">labs</span><span class="p">(</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Reading Comprehension Score&quot;</span><span class="p">,</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;N-Back Score&quot;</span><span class="p">,</span>
-    <span class="n">colour</span> <span class="o">=</span> <span class="s2">&quot;Test Session&quot;</span>
-  <span class="p">)</span> <span class="o">+</span>
-  <span class="n">theme</span><span class="p">(</span>
-    <span class="n">legend</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="n">c</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
-    <span class="n">legend</span><span class="o">.</span><span class="n">justification</span> <span class="o">=</span> <span class="n">c</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
-    <span class="n">legend</span><span class="o">.</span><span class="n">background</span> <span class="o">=</span> <span class="n">element_blank</span><span class="p">()</span>
-  <span class="p">)</span> <span class="o">+</span>
-  <span class="n">scale_colour_viridis_d</span><span class="p">()</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">pl</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">exp_dat_fct</span><span class="w"> </span><span class="o">|&gt;</span>
+<span class="w">  </span><span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">read_score</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">memory_score</span><span class="p">,</span><span class="w"> </span><span class="n">colour</span><span class="o">=</span><span class="n">time</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s">&quot;lm&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">theme_classic</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">labs</span><span class="p">(</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Reading Comprehension Score&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;N-Back Score&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">colour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Test Session&quot;</span>
+<span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">theme</span><span class="p">(</span>
+<span class="w">    </span><span class="n">legend.position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">),</span>
+<span class="w">    </span><span class="n">legend.justification</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">),</span>
+<span class="w">    </span><span class="n">legend.background</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_blank</span><span class="p">()</span>
+<span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">scale_colour_viridis_d</span><span class="p">()</span>
 
-<span class="n">cvdPlot</span><span class="p">(</span><span class="n">pl</span><span class="p">)</span>
+<span class="nf">cvdPlot</span><span class="p">(</span><span class="n">pl</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`geom_smooth()` using formula = &#39;y ~ x&#39;
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/be6cceeae54294b3021478d2b6772ebdd14abcfeedbf867e127b0e0d1040a99e.png"><img alt="../_images/be6cceeae54294b3021478d2b6772ebdd14abcfeedbf867e127b0e0d1040a99e.png" src="../_images/be6cceeae54294b3021478d2b6772ebdd14abcfeedbf867e127b0e0d1040a99e.png" style="width: 480px; height: 420px;" />
+</a>
 </div>
 </div>
 <div class="cell tag_remove-input docutils container">
@@ -827,19 +910,30 @@ The easiest way to change the labels' order is to set the variable as a factor b
 <p>For this, <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> provides the <code class="docutils literal notranslate"><span class="pre">facet_*</span></code> functions. Here is an example using <code class="docutils literal notranslate"><span class="pre">facet_wrap()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exp_dat_fct</span> <span class="o">|&gt;</span>
-  <span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">read_score</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">memory_score</span><span class="p">))</span> <span class="o">+</span>
-  <span class="n">geom_point</span><span class="p">()</span> <span class="o">+</span>
-  <span class="n">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;lm&quot;</span><span class="p">)</span> <span class="o">+</span>
-  <span class="n">theme_classic</span><span class="p">()</span> <span class="o">+</span>
-  <span class="n">labs</span><span class="p">(</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Reading Comprehension Score&quot;</span><span class="p">,</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;N-Back Score&quot;</span><span class="p">,</span>
-    <span class="n">colour</span> <span class="o">=</span> <span class="s2">&quot;Test Session&quot;</span>
-  <span class="p">)</span> <span class="o">+</span>
-  <span class="n">facet_wrap</span><span class="p">(</span><span class="nb">vars</span><span class="p">(</span><span class="n">time</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">exp_dat_fct</span><span class="w"> </span><span class="o">|&gt;</span>
+<span class="w">  </span><span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">read_score</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">memory_score</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s">&quot;lm&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">theme_classic</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">labs</span><span class="p">(</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Reading Comprehension Score&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;N-Back Score&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">colour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Test Session&quot;</span>
+<span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">facet_wrap</span><span class="p">(</span><span class="nf">vars</span><span class="p">(</span><span class="n">time</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ignoring unknown labels:
+<span class=" -Color -Color-Cyan">•</span> <span class=" -Color -Color-Green">colour</span> : <span class=" -Color -Color-Blue">&quot;Test Session&quot;</span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`geom_smooth()` using formula = &#39;y ~ x&#39;
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/79721a19cc8c993c9f9055c5bf96b04031c8fe5ae60e12351cb6809f99f0eee0.png"><img alt="../_images/79721a19cc8c993c9f9055c5bf96b04031c8fe5ae60e12351cb6809f99f0eee0.png" src="../_images/79721a19cc8c993c9f9055c5bf96b04031c8fe5ae60e12351cb6809f99f0eee0.png" style="width: 450px; height: 210px;" />
+</a>
 </div>
 </div>
 <p>This can be especially useful if the plot would otherwise contain too much information.</p>
@@ -851,26 +945,33 @@ The easiest way to change the labels' order is to set the variable as a factor b
 <p>Let’s imagine we are happy with this final plot.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scatter_pl</span> <span class="o">&lt;-</span> <span class="n">exp_dat_fct</span> <span class="o">|&gt;</span>
-  <span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">read_score</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">memory_score</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="n">time</span><span class="p">))</span> <span class="o">+</span>
-  <span class="n">geom_point</span><span class="p">()</span> <span class="o">+</span>
-  <span class="n">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;lm&quot;</span><span class="p">)</span> <span class="o">+</span>
-  <span class="n">theme_classic</span><span class="p">()</span> <span class="o">+</span>
-  <span class="n">labs</span><span class="p">(</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Reading Comprehension Score&quot;</span><span class="p">,</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;N-Back Score&quot;</span><span class="p">,</span>
-    <span class="n">colour</span> <span class="o">=</span> <span class="s2">&quot;Test Session&quot;</span>
-  <span class="p">)</span> <span class="o">+</span>
-  <span class="n">theme</span><span class="p">(</span>
-    <span class="n">legend</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="n">c</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
-    <span class="n">legend</span><span class="o">.</span><span class="n">justification</span> <span class="o">=</span> <span class="n">c</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
-    <span class="n">legend</span><span class="o">.</span><span class="n">background</span> <span class="o">=</span> <span class="n">element_blank</span><span class="p">()</span>
-  <span class="p">)</span> <span class="o">+</span>
-  <span class="n">scale_colour_viridis_d</span><span class="p">()</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">scatter_pl</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">exp_dat_fct</span><span class="w"> </span><span class="o">|&gt;</span>
+<span class="w">  </span><span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">read_score</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">memory_score</span><span class="p">,</span><span class="w"> </span><span class="n">colour</span><span class="o">=</span><span class="n">time</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s">&quot;lm&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">theme_classic</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">labs</span><span class="p">(</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Reading Comprehension Score&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;N-Back Score&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">colour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Test Session&quot;</span>
+<span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">theme</span><span class="p">(</span>
+<span class="w">    </span><span class="n">legend.position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">),</span>
+<span class="w">    </span><span class="n">legend.justification</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">),</span>
+<span class="w">    </span><span class="n">legend.background</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_blank</span><span class="p">()</span>
+<span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">scale_colour_viridis_d</span><span class="p">()</span>
 
 <span class="n">scatter_pl</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`geom_smooth()` using formula = &#39;y ~ x&#39;
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/da8297070d11532af6f3edf341dfdb585a5d035ebba56656f46a661e1d9c7e23.png"><img alt="../_images/da8297070d11532af6f3edf341dfdb585a5d035ebba56656f46a661e1d9c7e23.png" src="../_images/da8297070d11532af6f3edf341dfdb585a5d035ebba56656f46a661e1d9c7e23.png" style="width: 240px; height: 210px;" />
+</a>
 </div>
 </div>
 <section id="saving-figures-for-a-report">
@@ -887,31 +988,45 @@ The easiest way to change the labels' order is to set the variable as a factor b
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># set base text size to 18-point</span>
-<span class="n">scatter_pl_large</span> <span class="o">&lt;-</span> <span class="n">scatter_pl</span> <span class="o">+</span>
-  <span class="n">theme</span><span class="p">(</span><span class="n">text</span> <span class="o">=</span> <span class="n">element_text</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="mi">18</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># set base text size to 18-point</span>
+<span class="n">scatter_pl_large</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">scatter_pl</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">theme</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">18</span><span class="p">))</span>
 
 <span class="n">scatter_pl_large</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`geom_smooth()` using formula = &#39;y ~ x&#39;
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/1feaa221c6f85b262790b3c671c5517e4b7fa5146566770873620b6b5cac01a3.png"><img alt="../_images/1feaa221c6f85b262790b3c671c5517e4b7fa5146566770873620b6b5cac01a3.png" src="../_images/1feaa221c6f85b262790b3c671c5517e4b7fa5146566770873620b6b5cac01a3.png" style="width: 300px; height: 300px;" />
+</a>
 </div>
 </div>
 <p>This introduces a problem where the last digit of “120” on the x axis is cut off</p>
 <p>We can fix this by changing the the <code class="docutils literal notranslate"><span class="pre">plot.margin</span></code> parameter in <code class="docutils literal notranslate"><span class="pre">theme()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scatter_pl_large</span> <span class="o">&lt;-</span> <span class="n">scatter_pl</span> <span class="o">+</span>
-  <span class="n">theme</span><span class="p">(</span>
-    <span class="c1"># set base text size to 18-point</span>
-    <span class="n">text</span> <span class="o">=</span> <span class="n">element_text</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="mi">18</span><span class="p">),</span>
-    <span class="c1"># add some extra space to the right of the plot</span>
-    <span class="c1"># (numbers are in the form top, right, bottom, left)</span>
-    <span class="n">plot</span><span class="o">.</span><span class="n">margin</span> <span class="o">=</span> <span class="n">margin</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;pt&quot;</span><span class="p">)</span>
-  <span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">scatter_pl_large</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">scatter_pl</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">theme</span><span class="p">(</span>
+<span class="w">    </span><span class="c1"># set base text size to 18-point</span>
+<span class="w">    </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">18</span><span class="p">),</span>
+<span class="w">    </span><span class="c1"># add some extra space to the right of the plot</span>
+<span class="w">    </span><span class="c1"># (numbers are in the form top, right, bottom, left)</span>
+<span class="w">    </span><span class="n">plot.margin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">margin</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">15</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">unit</span><span class="o">=</span><span class="s">&quot;pt&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">)</span>
 
 <span class="n">scatter_pl_large</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`geom_smooth()` using formula = &#39;y ~ x&#39;
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/c91d38da1302f836d137a697ac33c0d5bc68908241d44452cd25d3573990858e.png"><img alt="../_images/c91d38da1302f836d137a697ac33c0d5bc68908241d44452cd25d3573990858e.png" src="../_images/c91d38da1302f836d137a697ac33c0d5bc68908241d44452cd25d3573990858e.png" style="width: 300px; height: 300px;" />
+</a>
 </div>
 </div>
 <p>We could then save this larger figure to a size more suitable for a presentation, such as:</p>
@@ -935,59 +1050,67 @@ The easiest way to change the labels' order is to set the variable as a factor b
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot the densities of reading scores</span>
-<span class="n">dens_read</span> <span class="o">&lt;-</span> <span class="n">exp_dat_fct</span> <span class="o">|&gt;</span>
-  <span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">read_score</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="n">time</span><span class="p">))</span> <span class="o">+</span>
-  <span class="n">geom_density</span><span class="p">()</span> <span class="o">+</span>
-  <span class="n">scale_colour_viridis_d</span><span class="p">()</span> <span class="o">+</span>
-  <span class="n">labs</span><span class="p">(</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Reading Comprehension Score&quot;</span><span class="p">,</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;Density&quot;</span><span class="p">,</span>
-    <span class="n">tag</span> <span class="o">=</span> <span class="s2">&quot;A&quot;</span>
-  <span class="p">)</span> <span class="o">+</span>
-  <span class="n">theme_classic</span><span class="p">()</span> <span class="o">+</span>
-  <span class="n">theme</span><span class="p">(</span><span class="n">legend</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="s2">&quot;none&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot the densities of reading scores</span>
+<span class="n">dens_read</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">exp_dat_fct</span><span class="w"> </span><span class="o">|&gt;</span>
+<span class="w">  </span><span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">read_score</span><span class="p">,</span><span class="w"> </span><span class="n">colour</span><span class="o">=</span><span class="n">time</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_density</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">scale_colour_viridis_d</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">labs</span><span class="p">(</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Reading Comprehension Score&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Density&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">tag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;A&quot;</span>
+<span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">theme_classic</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">theme</span><span class="p">(</span><span class="n">legend.position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;none&quot;</span><span class="p">)</span>
 
 <span class="n">dens_read</span>
 
 <span class="c1"># plot the densities of reading scores</span>
-<span class="n">dens_memory</span> <span class="o">&lt;-</span> <span class="n">exp_dat_fct</span> <span class="o">|&gt;</span>
-  <span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">memory_score</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="n">time</span><span class="p">))</span> <span class="o">+</span>
-  <span class="n">geom_density</span><span class="p">()</span> <span class="o">+</span>
-  <span class="n">scale_colour_viridis_d</span><span class="p">()</span> <span class="o">+</span>
-  <span class="n">labs</span><span class="p">(</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;N-Back Score&quot;</span><span class="p">,</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;Density&quot;</span><span class="p">,</span>
-    <span class="n">tag</span> <span class="o">=</span> <span class="s2">&quot;B&quot;</span>
-  <span class="p">)</span> <span class="o">+</span>
-  <span class="n">theme_classic</span><span class="p">()</span> <span class="o">+</span>
-  <span class="n">theme</span><span class="p">(</span><span class="n">legend</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="s2">&quot;none&quot;</span><span class="p">)</span>
+<span class="n">dens_memory</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">exp_dat_fct</span><span class="w"> </span><span class="o">|&gt;</span>
+<span class="w">  </span><span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">memory_score</span><span class="p">,</span><span class="w"> </span><span class="n">colour</span><span class="o">=</span><span class="n">time</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_density</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">scale_colour_viridis_d</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">labs</span><span class="p">(</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;N-Back Score&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Density&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">tag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;B&quot;</span>
+<span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">theme_classic</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">theme</span><span class="p">(</span><span class="n">legend.position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;none&quot;</span><span class="p">)</span>
 
 <span class="n">dens_memory</span>
 
 <span class="c1"># plot a scatter plot of reading scores by memory scores</span>
-<span class="n">scatter</span> <span class="o">&lt;-</span> <span class="n">exp_dat_fct</span> <span class="o">|&gt;</span>
-  <span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">read_score</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">memory_score</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="n">time</span><span class="p">))</span> <span class="o">+</span>
-  <span class="n">geom_point</span><span class="p">()</span> <span class="o">+</span>
-  <span class="n">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;lm&quot;</span><span class="p">,</span> <span class="n">formula</span><span class="o">=</span><span class="n">y</span><span class="o">~</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span>
-  <span class="n">theme_classic</span><span class="p">()</span> <span class="o">+</span>
-  <span class="n">labs</span><span class="p">(</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Reading Comprehension Score&quot;</span><span class="p">,</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;N-Back Score&quot;</span><span class="p">,</span>
-    <span class="n">colour</span> <span class="o">=</span> <span class="s2">&quot;Test Session&quot;</span><span class="p">,</span>
-    <span class="n">tag</span> <span class="o">=</span> <span class="s2">&quot;C&quot;</span>
-  <span class="p">)</span> <span class="o">+</span>
-  <span class="n">theme</span><span class="p">(</span>
-    <span class="n">legend</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="n">c</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
-    <span class="n">legend</span><span class="o">.</span><span class="n">justification</span> <span class="o">=</span> <span class="n">c</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
-    <span class="n">legend</span><span class="o">.</span><span class="n">background</span> <span class="o">=</span> <span class="n">element_blank</span><span class="p">(),</span>
-    <span class="n">legend</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="s2">&quot;horizontal&quot;</span>
-  <span class="p">)</span> <span class="o">+</span>
-  <span class="n">scale_colour_viridis_d</span><span class="p">()</span>
+<span class="n">scatter</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">exp_dat_fct</span><span class="w"> </span><span class="o">|&gt;</span>
+<span class="w">  </span><span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">read_score</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">memory_score</span><span class="p">,</span><span class="w"> </span><span class="n">colour</span><span class="o">=</span><span class="n">time</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s">&quot;lm&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">formula</span><span class="o">=</span><span class="n">y</span><span class="o">~</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">theme_classic</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">labs</span><span class="p">(</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Reading Comprehension Score&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;N-Back Score&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">colour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Test Session&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">tag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;C&quot;</span>
+<span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">theme</span><span class="p">(</span>
+<span class="w">    </span><span class="n">legend.position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">),</span>
+<span class="w">    </span><span class="n">legend.justification</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">),</span>
+<span class="w">    </span><span class="n">legend.background</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_blank</span><span class="p">(),</span>
+<span class="w">    </span><span class="n">legend.direction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;horizontal&quot;</span>
+<span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">scale_colour_viridis_d</span><span class="p">()</span>
 
 <span class="n">scatter</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../_images/41dc872e781c5a33508a21e9a02fb59f01ae1c97707f744b653fb4517e0fb678.png"><img alt="../_images/41dc872e781c5a33508a21e9a02fb59f01ae1c97707f744b653fb4517e0fb678.png" src="../_images/41dc872e781c5a33508a21e9a02fb59f01ae1c97707f744b653fb4517e0fb678.png" style="width: 300px; height: 180px;" />
+</a>
+<a class="reference internal image-reference" href="../_images/82b1c50a7a238226ca5353ec3a93076297930c7d3d7d514310ee46f0f66f7f7c.png"><img alt="../_images/82b1c50a7a238226ca5353ec3a93076297930c7d3d7d514310ee46f0f66f7f7c.png" src="../_images/82b1c50a7a238226ca5353ec3a93076297930c7d3d7d514310ee46f0f66f7f7c.png" style="width: 300px; height: 180px;" />
+</a>
+<a class="reference internal image-reference" href="../_images/79daa35784eaf1d169edcf18afb9e71b951cbd11077b991d49ffb5da6dc739dd.png"><img alt="../_images/79daa35784eaf1d169edcf18afb9e71b951cbd11077b991d49ffb5da6dc739dd.png" src="../_images/79daa35784eaf1d169edcf18afb9e71b951cbd11077b991d49ffb5da6dc739dd.png" style="width: 300px; height: 180px;" />
+</a>
 </div>
 </div>
 <p>Notice that we have used the <code class="docutils literal notranslate"><span class="pre">tag</span></code> argument of <code class="docutils literal notranslate"><span class="pre">labs()</span></code> to label them <em>A</em>, <em>B</em>, <em>C</em>, and that only one panel has a legend, to avoid being redundant.</p>
@@ -996,18 +1119,26 @@ The easiest way to change the labels' order is to set the variable as a factor b
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">dens_read</span> <span class="o">|</span> <span class="n">dens_memory</span><span class="p">)</span> <span class="o">/</span> <span class="n">scatter</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">dens_read</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">dens_memory</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">scatter</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../_images/7e9d309410e7695f49a131b1d3578fd312f480472ad14a4ffddc92b1c663ca58.png"><img alt="../_images/7e9d309410e7695f49a131b1d3578fd312f480472ad14a4ffddc92b1c663ca58.png" src="../_images/7e9d309410e7695f49a131b1d3578fd312f480472ad14a4ffddc92b1c663ca58.png" style="width: 360px; height: 375px;" />
+</a>
 </div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">patchwork</span></code> package has lots of great options, and handles arrangement automatically. For example, this plot would probably look better if the bottom panel was larger than the top two.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">dens_read</span> <span class="o">|</span> <span class="n">dens_memory</span><span class="p">)</span> <span class="o">/</span> <span class="n">scatter</span> <span class="o">+</span>
-  <span class="n">plot_layout</span><span class="p">(</span><span class="n">heights</span> <span class="o">=</span> <span class="n">c</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">dens_read</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">dens_memory</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">scatter</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">plot_layout</span><span class="p">(</span><span class="n">heights</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../_images/d7d0cb4fff0cce03455dd011ca4b374ea66e5a0268f4c4230315d1528a200113.png"><img alt="../_images/d7d0cb4fff0cce03455dd011ca4b374ea66e5a0268f4c4230315d1528a200113.png" src="../_images/d7d0cb4fff0cce03455dd011ca4b374ea66e5a0268f4c4230315d1528a200113.png" style="width: 360px; height: 375px;" />
+</a>
 </div>
 </div>
 </section>
@@ -1018,6 +1149,10 @@ The easiest way to change the labels' order is to set the variable as a factor b
 <p><strong>Figure 1.</strong></p>
 <p><em>Relationship between scores in the Reading Comprehension and N-Back tasks, at the three session times.</em></p>
 <div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../_images/d7d0cb4fff0cce03455dd011ca4b374ea66e5a0268f4c4230315d1528a200113.png"><img alt="../_images/d7d0cb4fff0cce03455dd011ca4b374ea66e5a0268f4c4230315d1528a200113.png" src="../_images/d7d0cb4fff0cce03455dd011ca4b374ea66e5a0268f4c4230315d1528a200113.png" style="width: 360px; height: 375px;" />
+</a>
+</div>
 </div>
 <p>The upper two panels (<strong>A</strong>, <strong>B</strong>) show the densities of scores. The lower panel (<strong>C</strong>) shows the correlations between scores in the two tasks in each of the three session times. Each point depicts one participant, and the lines depict the linear relationships. Shaded grey intervals depict 95% Confidence Intervals.</p>
 </section>
@@ -1032,16 +1167,16 @@ The easiest way to change the labels' order is to set the variable as a factor b
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "r"
         },
         kernelOptions: {
-            name: "python3",
+            name: "ir",
             path: "./introduction"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'ir'</script>
 
                 </article>
               
