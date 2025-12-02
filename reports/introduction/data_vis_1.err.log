@@ -30,7 +30,7 @@ Warning message:
 “Failed to open 'https://raw.githubusercontent.com/JackEdTaylor/expra-wise24/master/lecture/_static/data_vis_dat.csv': The requested URL returned error: 404”
 ------------------
 
-Error in open.connection(structure(4L, class = c("curl", "connection"), conn_id = <pointer: 0x559e52047ba0>), : cannot open the connection
+Error in open.connection(structure(4L, class = c("curl", "connection"), conn_id = <pointer: 0x560862511f90>), : cannot open the connection
 Traceback:
 
 1. vroom::vroom(file, delim = ",", col_names = col_names, col_types = col_types, 
@@ -52,8 +52,8 @@ Traceback:
  .     num_threads = num_threads, progress = progress)
 3. (function (con, ...) 
  . UseMethod("open"))(structure(4L, class = c("curl", "connection"
- . ), conn_id = <pointer: 0x559e52047ba0>), "rb")
-4. open.connection(structure(4L, class = c("curl", "connection"), conn_id = <pointer: 0x559e52047ba0>), 
+ . ), conn_id = <pointer: 0x560862511f90>), "rb")
+4. open.connection(structure(4L, class = c("curl", "connection"), conn_id = <pointer: 0x560862511f90>), 
  .     "rb")
 5. .handleSimpleError(function (cnd) 
  . {
@@ -63,5 +63,5 @@ Traceback:
  .     switch(on_error, continue = invokeRestart("eval_continue"), 
  .         stop = invokeRestart("eval_stop"), error = NULL)
  . }, "cannot open the connection", base::quote(open.connection(structure(4L, class = c("curl", 
- . "connection"), conn_id = <pointer: 0x559e52047ba0>), "rb")))
+ . "connection"), conn_id = <pointer: 0x560862511f90>), "rb")))
 
