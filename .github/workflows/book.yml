@@ -35,7 +35,7 @@ jobs:
     - name: Install Python 3.10
       uses: actions/setup-python@v1
       with:
-        python-version: 3.9
+        python-version: 3.10
     
     - name: Install R
       uses: r-lib/actions/setup-r@v2
