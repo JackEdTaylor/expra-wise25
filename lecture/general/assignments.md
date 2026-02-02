@@ -56,7 +56,7 @@ Note that the grading criteria sheet is only a guide! Your grade will not be cal
 
 The ExPra will be graded by me (Jack Taylor).
 
-You can download the grading criteria that I will be using as a guide here: [ExPra Grading Criteria](https://raw.githubusercontent.com/JackEdTaylor/expra-wise25/master/lecture/_static/ExPra_grading_criteria.pdf)
+You can download the grading criteria that I will be using as a guide here: [ExPra Grading Criteria](https://raw.githubusercontent.com/JackEdTaylor/expra-wise25/master/lecture/_static/ExPra_Grading_criteria.pdf)
 
 ### Submitting the ExPra Report
 
